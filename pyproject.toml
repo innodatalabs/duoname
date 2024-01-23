@@ -1,0 +1,46 @@
+[project]
+name = "duoname"
+dynamic = ["version"]
+authors = [
+    {name = "Mike Kroutikov", email = "mkroutikov@innodata.com"},
+]
+description = "Random string <adjective>-<noun>. Useful for user-friendly name generation."
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["random name"]
+license = {text = "MIT License"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [ ]
+
+[project.urls]
+Homepage      = "https://github.com/innodatalabs/duoname"
+Documentation = "https://github.com/innodatalabs/duoname"
+Repository    = "https://github.com/innodatalabs/duoname"
+
+[project.scripts]
+duoname = "duoname.__main__:main"
+
+[project.optional-dependencies]
+dev = ["twine"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.dynamic]
+version = {attr = "duoname.__version__"}
+
+[tool.setuptools]
+packages = ["duoname"]
+
+[tool.setuptools.package-data]
+"duoname" = ["*.txt"]
+
